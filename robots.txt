@@ -1,0 +1,5 @@
+# robots.txt - Cheick Business Portfolio
+User-agent: *
+Allow: /
+
+Sitemap: https://cheickdaoka.github.io/mon-blog-scolaire/sitemap.xml
