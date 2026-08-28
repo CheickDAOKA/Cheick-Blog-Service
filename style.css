@@ -84,6 +84,7 @@ body{
     color:var(--text-primary);
     text-decoration:none;
     font-weight:500;
+    font-size:1.2rem;
     transition:var(--transition);
     position:relative;
 }
@@ -325,7 +326,8 @@ body{
     color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
-    transition: var(-transition);
+    font-size: 1.2rem;
+    transition: var(--transition);
     position:relative;
 }
 .container-nav a::after{
@@ -552,6 +554,7 @@ section{
     color:var(--text-secondary);
     margin-bottom :1.5em;
     line-height: 1.8;
+    font-size: 1.15rem;
 }
 .project-tags{
     display:flex;
@@ -628,68 +631,133 @@ section{
     padding: 5rem 0;
 }
 
-/* Grille responsive */
-.services-grid {
+/* Grille responsive des cartes services */
+.list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    align-items: stretch;
 }
 
-/* Carte service */
-.list{
-    display: flex;
-    gap: 20px;
-}
+/* Carte service individuelle */
 .set-item {
     background: var(--bg-primary);
+    border: 1px solid var(--border-color);
     border-radius: 16px;
     overflow: hidden;
     box-shadow: var(--card-shadow);
-    transition: var(--transition);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     display: flex;
     flex-direction: column;
-    max-width: 320px; /* taille carte */
+    height: 100%;
+    position: relative;
 }
 
 .set-item:hover {
     transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 102, 204, 0.18);
+    border-color: var(--accent-color);
 }
 
 /* Image carte */
 .set-item .image {
     width: 100%;
-    height: 180px;
+    height: 230px;
+    position: relative;
     overflow: hidden;
+    background-color: var(--bg-secondary);
 }
 
 .set-item .image img {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    object-position: center;
+    transition: transform 0.5s ease;
 }
 
 .set-item:hover .image img {
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
-/* Contenu */
+/* Badge de catégorie */
+.service-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--accent-color);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    letter-spacing: 0.3px;
+}
+
+/* Contenu textuel */
 .service-content {
-    padding: 1rem;
-    text-align: center;
+    padding: 1.5rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
 }
 
 .service-content h3 {
     color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
     margin-bottom: 0.8rem;
-    font-size: 1.2rem;
+    line-height: 1.35;
 }
 
 .service-content p {
     color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin-bottom: 1.2rem;
+    flex-grow: 1;
+}
+
+/* Bloc citation inspirante */
+.service-quote {
+    margin: 0.5rem 0 1.2rem;
+    padding: 10px 14px;
+    background: var(--bg-secondary);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 6px;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+/* Bouton d'action sur chaque carte */
+.service-btn {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0.75rem 1.2rem;
+    background: transparent;
+    border: 1.5px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
     font-size: 0.95rem;
-    flex: 1;
-    line-height: 1.6;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.service-btn:hover {
+    background: var(--accent-color);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+    transform: translateY(-2px);
 }
 
 .barrer{
@@ -817,14 +885,36 @@ section{
 }
 
 .contact-it a {
-    color:blue;
-    text-decoration:none;
+    color: blue;
+    text-decoration: none;
     font-weight: 400;
     transition: var(--transition);
 }
-.contact-it a:hover{
-    color:var(--accent-color)
+.contact-it a:hover {
+    color: var(--accent-color);
+}
 
+/* Couleurs spécifiques aux réseaux sociaux */
+.contact-it .bi-linkedin,
+.contact-it a[href*="linkedin"] {
+    color: #0077b5; /* Bleu LinkedIn */
+}
+
+.contact-it .bi-whatsapp,
+.contact-it a[href*="wa.me"],
+.contact-it a[href*="whatsapp"] {
+    color: #25d366; /* Vert WhatsApp */
+}
+
+.contact-it .bi-github,
+.contact-it a[href*="github"] {
+    color: #24292e; /* Noir/Gris foncé GitHub */
+}
+
+/* Override pour GitHub en mode sombre pour rester lisible */
+body.dark-theme .contact-it .bi-github,
+body.dark-theme .contact-it a[href*="github"] {
+    color: #f0f6fc;
 }
 
 
@@ -845,7 +935,9 @@ section{
     .container-nav{
         gap:1rem;
         font-size: 0.9rem;
-
+    }
+    .container-nav a{
+        font-size: 1rem;
     }
     .hero{
         width: 100%;
@@ -865,12 +957,15 @@ section{
     .image img{
         width:100%;
         max-width: 260px;
-        margin: 0 auto
+        margin: 0 auto;
+    }
+    .set-item .image img{
+        max-width: 100%;
+        width: 100%;
     }
     .list{
-        flex-wrap: wrap;
-       
-         grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     .presentation{
         font-size: 1rem;

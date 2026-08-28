@@ -118,28 +118,7 @@ serviceCards.forEach(card => {
 // ===============================
 // 5️⃣ GESTION DU FORMULAIRE CONTACT
 // ===============================
-const contactForm = document.querySelector('.contactForm');
-
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const nom = document.getElementById('nom').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const sujet = document.getElementById('sujet').value.trim();
-    const message = document.getElementById('sms').value.trim();
-
-    if (!nom || !email || !sujet || !message) {
-      alert('Veuillez remplir tous les champs.');
-      return;
-    }
-
-    // Simulation d'envoi
-    alert('Merci ' + nom + ' ! Votre message a été envoyé avec succès.');
-
-    contactForm.reset();
-  });
-}
+// Le formulaire est géré par EmailJS (lignes 1-24)
 
 // ===============================
 // 6️⃣ MESSAGE CONSOLE
