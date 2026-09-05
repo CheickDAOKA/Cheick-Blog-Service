@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cheickdaoka.github.io/mon-blog-scolaire/sitemap.xml
+Sitemap: https://cheickdaoka.github.io/Cheick-Blog-Service/sitemap.xml
