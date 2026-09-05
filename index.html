@@ -4,35 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cheick Abdoul Kader DAO | Cheick BUSINESS services</title>
+    <title>Cheick Abdoul Kader DAO  | Cheick BUSINESS services</title>
     <link rel="icon" href="images/logo_cheick_business.jpg" type="image/jpeg">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Portfolio officiel de Cheick Abdoul Kader DAO - Étudiant en informatique, passionné par le développement web, l'intelligence artificielle et les solutions logicielles innovantes.">
-    <meta name="author" content="Cheick Abdoul Kader DAO">
+    <meta name="description" content="Portfolio officiel de Cheick Abdoul Kader DAO  - Étudiant en informatique, passionné par le développement web, l'intelligence artificielle et les solutions logicielles innovantes.">
+    <meta name="author" content="Cheick Abdoul Kader DAO ">
+    <meta name="keywords" content="cheickdaoka, Cheick Abdoul Kader DAO, Cheick BUSINESS, développeur web Burkina Faso, portfolio informatique">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://cheickdaoka.github.io/mon-blog-scolaire/">
+    <link rel="canonical" href="https://cheickdaoka.github.io/Cheick-Blog-Service/">
 
     <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cheickdaoka.github.io/mon-blog-scolaire/">
+    <meta property="og:url" content="https://cheickdaoka.github.io/Cheick-Blog-Service/">
     <meta property="og:title" content="Cheick Abdoul Kader DAO | Cheick BUSINESS services">
     <meta property="og:description" content="Développeur full-stack, passionné par le développement web et les nouvelles technologies. Découvrez mes compétences et services.">
-    <meta property="og:image" content="https://cheickdaoka.github.io/mon-blog-scolaire/images/profe.jpeg">
+    <meta property="og:image" content="https://cheickdaoka.github.io/Cheick-Blog-Service/images/profe.jpeg">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://cheickdaoka.github.io/mon-blog-scolaire/">
+    <meta name="twitter:url" content="https://cheickdaoka.github.io/Cheick-Blog-Service/">
     <meta name="twitter:title" content="Cheick Abdoul Kader DAO | Portfolio">
     <meta name="twitter:description" content="Étudiant en informatique passionné par le développement web et l'IA.">
-    <meta name="twitter:image" content="images/profe.jpeg">
+    <meta name="twitter:image" content="https://cheickdaoka.github.io/Cheick-Blog-Service/images/profe.jpeg">
 
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="M3ulyIb-M00rC_rAXl6OfcFcS_b5anmRnMN0DeSnTqI" />
 
     <!-- Stylesheets & Icons -->
     <link rel="stylesheet" href="icons/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.2">
 </head>
 
 <body>
@@ -44,14 +45,20 @@
                     <img src="images/logo_cheick_business.jpg" alt="Logo Cheick BUSINESS" style="width: 55px; height: 55px; border-radius: 8px; object-fit: cover;">
                     <span>Cheick BUSINESS</span>
                 </div>
-                <ul class="container-nav">
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#competence">compétence</a></li>
-                    <li><a href="#service">Service</a></li>
-                    <li><a href="#contact">contact</a></li>
-                </ul>
-                <button class="theme-toggle" onclick="toggleTheme()"><i class="bi bi-moon-fill"></i></button>
-
+                <div class="nav-right">
+                    <ul class="container-nav" id="containerNav">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#competence">Compétence</a></li>
+                        <li><a href="#service">Service</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème sombre/clair"><i class="bi bi-moon-fill"></i></button>
+                    <button class="burger-menu" id="burgerBtn" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </nav>
 
@@ -61,15 +68,15 @@
         <div class="all-head">
             <div class="hero-content">
                 
-                <h1 class="fade-in"> Salut!, je suis <span class="highlight">Cheick Abdoul Kader DAO</span></h1>
+                <h1 class="fade-in"> Salut!, je suis <span class="highlight">Cheick Abdoul Kader DAO</span> <span style="font-size: 0.5em; opacity: 0.7;"></span></h1>
                 <p class="presentation fade-in-delay">Ingénieur des travaux en Informatique</p>
                 <div class="impro">
                     <img src="images/profe.jpeg" alt="photo professionnelle">
                 </div>
 
                
-                <p class="description fade-in-delay-2"> Developper full-stack, je suis passioné par le développement Web et des applications ,l'Intélligence Artificiel et les nouvelles technologies.
-                    je propose des solutions repondant à des problèmes de la vie quotidienne.
+                <p class="description fade-in-delay-2"> Développeur full-stack, je suis passionné par le développement Web et des applications, l'Intelligence Artificielle et les nouvelles technologies.
+                    Je propose des solutions répondant à des problèmes de la vie quotidienne.
 
                 </p>
                 <div class="on-buttons fade-in-delay-3">
@@ -100,7 +107,7 @@
                     <div class="project-icon"><i class="bi bi-laptop"></i></div>
                     <h3>Site présentant le département Informatique de l'UTS</h3>
                     <p class="project-description">
-                        Ce site web responsive  valorise le département informatique de même pour l'université.
+                        Un site web responsive qui valorise le département informatique de même pour l'université.
                         Développé avec HTML,CSS et Javascript.
 
 
@@ -134,8 +141,8 @@
                     <div class="project-icon"><i class="bi bi-tools"></i></div>
                     <h3>Site de e'store</h3>
                     <p class="project-description">
-                        Ce site web responsive  portant le nom de UTS'store a été concu en équipe.
-                        Et pour le besoins de l'administration et des étudiants de l'UTS loin de la ville et en manque de certains besoins,mon équipe et moi ont été dans l'obligation de concevoir ce site pour la livraison et l'achat de cetains produits.
+                        Un site web responsive portant le nom de UTS'store, qui a été conçu en équipe.
+                        Pour les besoins de l'administration et des étudiants de l'UTS loin de la ville et en manque de certains besoins, mon équipe et moi avons été dans l'obligation de concevoir ce site pour la livraison et l'achat de certains produits.
                         Développé avec les framework <strong>Django,Bootstrap </strong>,le langage Python et Javascript.
 
 
@@ -160,8 +167,8 @@
                     <div class="skill-icon"><i class="bi bi-person-fill-check"></i></div>
                     <h3>Maitrise de la langue Anglaise</h3> 
                     <p>Aspirant de la langue Anglaise, je suis good speaker et writer de niveau intermédiaire.
-                        Membre de la communauté Anglophone et participant à plusieurs évenements tels que les evenements à l'ambassade des USA au BURKINA FASO.
-                        Aspirant <strong>Communauty Manager de la communauté ILA'S Enterprise.</strong>
+                        Membre de la communauté Anglophone et participant à plusieurs événements tels que les événements à l'ambassade des USA au BURKINA FASO.
+                        Aspirant <strong>Community Manager de la communauté ILA'S Enterprise.</strong>
                     </p>
                 </div>
                 <div class="image">
@@ -201,7 +208,7 @@
                         <p>
                             Vous souhaitez apprendre à coder de zéro ? Profitez d'une formation 100% pratique pour maîtriser les bases du web (HTML, CSS, JavaScript) sans prérequis. Des projets concrets et un accompagnement personnalisé pour progresser rapidement et créer vos premiers sites web.
                         </p>
-                        <a href="#contact" class="service-btn">Demander cette formation <i class="bi bi-arrow-right"></i></a>
+                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" class="service-btn">Demander cette formation <i class="bi bi-whatsapp"></i></a>
                     </div>
                  </div>
 
@@ -216,7 +223,7 @@
                         <p>
                             Donnez vie à vos projets numériques ! Je conçois des applications web et mobiles sur-mesure, performantes et sécurisées (Laravel, Flutter, JS). Une solution clé en main, intuitive et moderne pour booster votre visibilité et simplifier votre gestion.
                         </p>
-                        <a href="#contact" class="service-btn">Lancer un projet <i class="bi bi-arrow-right"></i></a>
+                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" class="service-btn">Demander mes services <i class="bi bi-whatsapp"></i></a>
                     </div>
                  </div>
 
@@ -231,7 +238,7 @@
                         <p>
                             Un ordinateur en panne, lent ou bloqué ? Bénéficiez d'un dépannage rapide et efficace : installation de systèmes et logiciels, nettoyage approfondi, élimination de virus et optimisation complète pour retrouver un appareil performant et fiable.
                         </p>
-                        <a href="#contact" class="service-btn">Demander un dépannage <i class="bi bi-arrow-right"></i></a>
+                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" class="service-btn">Demander un dépannage <i class="bi bi-whatsapp"></i></a>
                     </div>
                  </div>
 
@@ -246,7 +253,7 @@
                         <p>
                             Gagnez des heures chaque semaine grâce à l'IA ! Je vous forme à l'utilisation concrète des outils d'IA générative (ChatGPT, prompting avancé) et j'intègre des agents intelligents pour automatiser vos tâches répétitives et booster votre productivité.
                         </p>
-                        <a href="#contact" class="service-btn">Découvrir les solutions IA <i class="bi bi-arrow-right"></i></a>
+                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" class="service-btn">Demander ce service <i class="bi bi-whatsapp"></i></a>
                     </div>
                  </div>
 
@@ -279,7 +286,7 @@
                         <p>
                             Vous organisez un événement ou avez des échanges avec des partenaires anglophones ? J'assure vos présentations, prises de parole et modérations en anglais avec aisance et professionnalisme pour valoriser vos opportunités d'affaires.
                         </p>
-                        <a href="#contact" class="service-btn">Réserver une intervention <i class="bi bi-arrow-right"></i></a>
+                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" class="service-btn">Réserver une intervention <i class="bi bi-whatsapp"></i></a>
                     </div>
                  </div>
                  
@@ -325,19 +332,19 @@
                 <form class="contactForm">
                     <h4>Contactez-moi</h4>
                     <div class="input-box">
-                        <input id="nom" name="nom" type="text" required>
+                        <input id="nom" name="nom" type="text" autocomplete="name" required>
                         <span>Nom complet</span>
                     </div>
                     <div class="input-box">
-                        <input id="email" name="email" type="email" required>
+                        <input id="email" name="email" type="email" autocomplete="email" required>
                         <span>Email</span>
                     </div>
                     <div class="input-box">
-                        <input id="sujet" name="sujet" type="text" required>
+                        <input id="sujet" name="sujet" type="text" autocomplete="off" required>
                         <span>Sujet</span>
                     </div>
                     <div class="input-box">
-                        <textarea  name="sms" id="sms"required></textarea>
+                        <textarea name="sms" id="sms" autocomplete="off" required></textarea>
                         <span>Message</span>
                     </div>
                     <div class="clic">
@@ -350,7 +357,6 @@
     <footer class="footer">
         <div class="ending">
             <p>&copy;2026 DAO Cheick. Tous droits réservés</p>
-            <p>Fait avec <i class="bi bi-emoji-smile"></i> et Git/GitHub</p>
         </div>
 
     </footer>
@@ -358,7 +364,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-    <script src="script.js"> </script>
+    <script src="script.js?v=1.1"> </script>
 </body>
 
 </html>

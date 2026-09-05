@@ -23,6 +23,37 @@ form.addEventListener("submit", function(e){
 
 });
 // ===============================
+// 🍔 MENU BURGER (MOBILE)
+// ===============================
+function toggleMenu() {
+  const burgerBtn = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('containerNav');
+  if (burgerBtn && navLinks) {
+    const isOpen = burgerBtn.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  }
+}
+
+function closeMenu() {
+  const burgerBtn = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('containerNav');
+  if (burgerBtn && navLinks) {
+    burgerBtn.classList.remove('active');
+    navLinks.classList.remove('active');
+    burgerBtn.setAttribute('aria-expanded', 'false');
+  }
+}
+
+// Fermer le menu lors du clic en dehors
+document.addEventListener('click', (e) => {
+  const barre = document.querySelector('.barre');
+  if (barre && !barre.contains(e.target)) {
+    closeMenu();
+  }
+});
+
+// ===============================
 // 1️⃣ THÈME SOMBRE / CLAIR
 // ===============================
 function toggleTheme() {
@@ -59,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===============================
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', function (e) {
+    closeMenu();
     const targetId = this.getAttribute('href');
     const target = document.querySelector(targetId);
 
@@ -131,3 +163,22 @@ console.log(
   '%cHTML • CSS • JavaScript • Ubuntu • GitHub Pages',
   'font-size:14px;color:#6c757d;'
 );
+
+// ===============================
+// 7️⃣ PROTECTION DES IMAGES (Anti-clic droit & anti-glisser)
+// ===============================
+// Désactiver le clic droit sur toutes les images
+document.addEventListener('contextmenu', function(e) {
+  if (e.target.tagName === 'IMG' || e.target.closest('.image') || e.target.closest('.impro')) {
+    e.preventDefault();
+  }
+});
+
+// Interdire le glisser-déposer sur toutes les images
+document.querySelectorAll('img').forEach(function(img) {
+  img.setAttribute('draggable', 'false');
+  img.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+  });
+});
+
