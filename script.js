@@ -1,27 +1,56 @@
-
 emailjs.init("duYdo4il5IOkPGPS_");
 
 const form = document.querySelector(".contactForm");
 
-form.addEventListener("submit", function(e){
+if (form) {
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
 
-  e.preventDefault();
+    // Protection anti-bot Honeypot
+    const honeypot = form.querySelector('input[name="website"]');
+    if (honeypot && honeypot.value.trim() !== "") {
+      // Détection bot : ignorer silencieusement sans appeler EmailJS
+      form.reset();
+      return;
+    }
 
-  emailjs.sendForm(
-    "service_jqw2bwb",
-    "template_u4u5xai",
-    this   // 👉 le formulaire
-  )
-  .then(function(){
-      alert("Message envoyé avec succès ✅");
-      form.reset(); // vide le formulaire après envoi
-  })
-  .catch(function(error){
-      console.log(error);
-      alert("Erreur ❌");
+    // Protection anti-flood (minimum 10 secondes entre deux envois)
+    const lastSubmit = localStorage.getItem('last_contact_submit');
+    const now = Date.now();
+    if (lastSubmit && (now - parseInt(lastSubmit, 10)) < 10000) {
+      alert("Veuillez patienter quelques secondes avant d'envoyer un nouveau message.");
+      return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Envoi en cours...";
+    }
+
+    emailjs.sendForm(
+      "service_jqw2bwb",
+      "template_u4u5xai",
+      this   // 👉 le formulaire
+    )
+    .then(function(){
+        localStorage.setItem('last_contact_submit', Date.now().toString());
+        alert("Message envoyé avec succès ✅");
+        form.reset(); // vide le formulaire après envoi
+    })
+    .catch(function(error){
+        console.error("Erreur d'envoi EmailJS :", error);
+        alert("Erreur lors de l'envoi du message ❌");
+    })
+    .finally(function(){
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Envoyer";
+        }
+    });
+
   });
-
-});
+}
 // ===============================
 // 🍔 MENU BURGER (MOBILE)
 // ===============================
@@ -63,24 +92,32 @@ function toggleTheme() {
   body.classList.toggle('dark-theme');
 
   if (body.classList.contains('dark-theme')) {
-    themeButton.innerHTML = '☀️';
+    if (themeButton) themeButton.textContent = '☀️';
     localStorage.setItem('theme', 'dark');
   } else {
-    themeButton.innerHTML = '🌙';
+    if (themeButton) themeButton.textContent = '🌙';
     localStorage.setItem('theme', 'light');
   }
 }
 
-// Charger le thème sauvegardé
+// Charger le thème sauvegardé et attacher les écouteurs d'événements
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
   const themeButton = document.querySelector('.theme-toggle');
+  const burgerBtn = document.getElementById('burgerBtn');
 
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-theme');
-    themeButton.innerHTML = '☀️';
-  } else {
-    themeButton.innerHTML = '🌙';
+  if (themeButton) {
+    themeButton.addEventListener('click', toggleTheme);
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-theme');
+      themeButton.textContent = '☀️';
+    } else {
+      themeButton.textContent = '🌙';
+    }
+  }
+
+  if (burgerBtn) {
+    burgerBtn.addEventListener('click', toggleMenu);
   }
 });
 

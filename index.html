@@ -31,6 +31,9 @@
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="M3ulyIb-M00rC_rAXl6OfcFcS_b5anmRnMN0DeSnTqI" />
 
+    <!-- Security: Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self' https://api.emailjs.com; object-src 'none'; base-uri 'self';">
+
     <!-- Stylesheets & Icons -->
     <link rel="stylesheet" href="icons/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css?v=1.2">
@@ -52,8 +55,8 @@
                         <li><a href="#service">Service</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
-                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Basculer le thème sombre/clair"><i class="bi bi-moon-fill"></i></button>
-                    <button class="burger-menu" id="burgerBtn" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <button class="theme-toggle" id="themeToggleBtn" aria-label="Basculer le thème sombre/clair"><i class="bi bi-moon-fill"></i></button>
+                    <button class="burger-menu" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -75,7 +78,7 @@
                 </div>
 
                
-                <p class="description fade-in-delay-2"> Développeur full-stack, je suis passionné par le développement Web et des applications, l'Intelligence Artificielle et les nouvelles technologies.
+                <p class="description fade-in-delay-2"> Développeur full-stack, je suis passionné par le développement logiciel, l'Intelligence Artificielle et les nouvelles technologies.
                     Je propose des solutions répondant à des problèmes de la vie quotidienne.
 
                 </p>
@@ -132,11 +135,12 @@
                     <div class="project-tags">
                         <span class="tag">React</span>
                     </div>
-                    <a href="https://worldcupplayer.bolt.host/" target="_blank" style="color: var(--accent-color); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; margin-top: 1.2rem;">
+                    <a href="https://worldcupplayer.bolt.host/" target="_blank" rel="noopener noreferrer" class="project-link">
                         Visiter le site <i class="bi bi-box-arrow-up-right"></i>
                     </a>
 
                 </div>
+                <!--Projet 3-->
                 <div class="project-card">
                     <div class="project-icon"><i class="bi bi-tools"></i></div>
                     <h3>Site de e'store</h3>
@@ -151,6 +155,23 @@
                         <span class="tag">Backend:Django</span>
                        
                     </div>
+
+                </div>
+                <!--Projet 4-->
+                <div class="project-card">
+                    <div class="project-icon"><i class="bi bi-person-workspace"></i></div>
+                    <h3>Mon Portfolio de Développeur</h3>
+                    <p class="project-description">
+                        Application web dynamique et interactive conçue pour valoriser mon parcours d'ingénieur des travaux en informatique, mes compétences techniques et l'ensemble de mes réalisations logicielles.
+                        Développé avec les frameworks <strong>Laravel</strong>, <strong>Livewire</strong> et <strong>Tailwind CSS</strong>.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">Full-Stack</span>
+                    </div>
+                    <a href="https://portfolio-production-946f.up.railway.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                        Voir le site <i class="bi bi-box-arrow-up-right"></i>
+                    </a>
 
                 </div>
                 
@@ -208,7 +229,7 @@
                         <p>
                             Vous souhaitez apprendre à coder de zéro ? Profitez d'une formation 100% pratique pour maîtriser les bases du web (HTML, CSS, JavaScript) sans prérequis. Des projets concrets et un accompagnement personnalisé pour progresser rapidement et créer vos premiers sites web.
                         </p>
-                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" class="service-btn">Demander cette formation <i class="bi bi-whatsapp"></i></a>
+                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" rel="noopener noreferrer" class="service-btn">Demander cette formation <i class="bi bi-whatsapp"></i></a>
                     </div>
                  </div>
 
@@ -223,7 +244,7 @@
                         <p>
                             Donnez vie à vos projets numériques ! Je conçois des applications web et mobiles sur-mesure, performantes et sécurisées (Laravel, Flutter, JS). Une solution clé en main, intuitive et moderne pour booster votre visibilité et simplifier votre gestion.
                         </p>
-                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" class="service-btn">Demander mes services <i class="bi bi-whatsapp"></i></a>
+                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" rel="noopener noreferrer" class="service-btn">Demander mes services <i class="bi bi-whatsapp"></i></a>
                     </div>
                  </div>
 
@@ -238,7 +259,7 @@
                         <p>
                             Un ordinateur en panne, lent ou bloqué ? Bénéficiez d'un dépannage rapide et efficace : installation de systèmes et logiciels, nettoyage approfondi, élimination de virus et optimisation complète pour retrouver un appareil performant et fiable.
                         </p>
-                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" class="service-btn">Demander un dépannage <i class="bi bi-whatsapp"></i></a>
+                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" rel="noopener noreferrer" class="service-btn">Demander un dépannage <i class="bi bi-whatsapp"></i></a>
                     </div>
                  </div>
 
@@ -253,7 +274,7 @@
                         <p>
                             Gagnez des heures chaque semaine grâce à l'IA ! Je vous forme à l'utilisation concrète des outils d'IA générative (ChatGPT, prompting avancé) et j'intègre des agents intelligents pour automatiser vos tâches répétitives et booster votre productivité.
                         </p>
-                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" class="service-btn">Demander ce service <i class="bi bi-whatsapp"></i></a>
+                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" rel="noopener noreferrer" class="service-btn">Demander ce service <i class="bi bi-whatsapp"></i></a>
                     </div>
                  </div>
 
@@ -271,7 +292,7 @@
                         <div class="service-quote">
                             « Le succès est quelque chose que l'on attire par la personne que l'on devient. » <br>— <strong>Jim Rohn</strong>
                         </div>
-                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" class="service-btn">Contacter sur WhatsApp <i class="bi bi-whatsapp"></i></a>
+                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" rel="noopener noreferrer" class="service-btn">Contacter sur WhatsApp <i class="bi bi-whatsapp"></i></a>
                     </div>
                  </div>
 
@@ -286,7 +307,7 @@
                         <p>
                             Vous organisez un événement ou avez des échanges avec des partenaires anglophones ? J'assure vos présentations, prises de parole et modérations en anglais avec aisance et professionnalisme pour valoriser vos opportunités d'affaires.
                         </p>
-                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" class="service-btn">Réserver une intervention <i class="bi bi-whatsapp"></i></a>
+                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" rel="noopener noreferrer" class="service-btn">Réserver une intervention <i class="bi bi-whatsapp"></i></a>
                     </div>
                  </div>
                  
@@ -312,15 +333,15 @@
               <div class="icon">
                     <div class="contact-it">
                          <span class="contact-icon"><i class="bi bi-linkedin"></i></span>
-                         <a href="https://www.linkedin.com/in/cheick-dao-29b588371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+                         <a href="https://www.linkedin.com/in/cheick-dao-29b588371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </div>
                     <div class="contact-it">
                         <span class="contact-icon"><i class="bi bi-github"></i></span>
-                        <a href="https://github.com/CheickDAOKA" target="_blank">GitHub</a>
+                        <a href="https://github.com/CheickDAOKA" target="_blank" rel="noopener noreferrer">GitHub</a>
                     </div>
                     <div class="contact-it">
                         <span class="contact-icon"><i class="bi bi-whatsapp"></i></span>
-                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank">WhatsApp</a>
+                        <a href="https://wa.me/message/BS3I3MNHN3MJO1" target="_blank" rel="noopener noreferrer">WhatsApp</a>
                     </div>
 
               </div>
@@ -331,6 +352,10 @@
             <div class="sent">
                 <form class="contactForm">
                     <h4>Contactez-moi</h4>
+                    <div class="input-box honeypot-field" aria-hidden="true">
+                        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+                        <label for="website" class="sr-only">Ne pas remplir ce champ</label>
+                    </div>
                     <div class="input-box">
                         <input id="nom" name="nom" type="text" autocomplete="name" required>
                         <span>Nom complet</span>
@@ -362,9 +387,9 @@
     </footer>
     
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.12.1/dist/email.min.js" integrity="sha384-VDbnsk/qjpIVHPQMkJiROI+vW/7cw0k8TFYVLUabm7EWoLEDwcXh09XQ6gQ86Y0B" crossorigin="anonymous"></script>
 
-    <script src="script.js?v=1.1"> </script>
+    <script src="script.js?v=1.2"></script>
 </body>
 
 </html>
